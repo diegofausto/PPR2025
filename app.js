@@ -53,7 +53,7 @@ function calcularPPR() {
     }
 
     document.getElementById('resultado').innerText = `Valor Bruto: R$ ${resultado.toFixed(2)}
-    Aviso Importante: O valor apresentado é bruto, ou seja, sem desconto de taxa sindical (Valor de acordo com o Acordo Coletivo da Filial) e Imposto de Renda (Para valores acima de R$ 8.214,40).`;
+    Aviso Importante: O valor apresentado é bruto, ou seja, sem desconto de taxa sindical (Valor de acordo com o Acordo Coletivo de cada Filial) e Imposto de Renda (Para valores acima de R$ 8.214,40).`;
 
     const relatorio = `
                 <h2>Relatório de Cálculo</h2>
@@ -79,3 +79,5 @@ function limparCampos() {
 
 function Voltar() { window.location.href = "https://diegofausto.github.io/calculadorascanpackers";
 }
+
+
