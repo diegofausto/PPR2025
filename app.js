@@ -52,19 +52,34 @@ function calcularPPR() {
         }
     }
 
-    document.getElementById('resultado').innerText = `Valor Bruto: R$ ${resultado.toFixed(2)}
-    Aviso Importante: O valor apresentado é bruto, ou seja, sem desconto de taxa sindical (Valor de acordo com o Acordo Coletivo de cada Filial) e Imposto de Renda (Para valores acima de R$ 8.214,40).`;
-
-    const relatorio = `
-                <h2>Relatório de Cálculo</h2>
-                <p><strong>Grupo de Cargo:</strong> ${grupoCargo}</p>
-                <p><strong>Categoria:</strong> ${categoria}</p>
-                <p><strong>Salário Base Mensal:</strong> R$ ${salario.toFixed(2)}</p>
-                <p><strong>Número de Meses Trabalhados:</strong> ${meses}</p>
-            `;
-            document.getElementById('relatorio').innerHTML = relatorio;
-            document.getElementById('logo-container').style.display = 'block';
-        
+const relatorio = `
+  <div style="background:#f9f9f9;border-radius:12px;padding:20px;box-shadow:0 2px 8px #ddd;">
+    <h2 style="color:#2a7ae2;">Relatório de Cálculo 📊</h2>
+    <p style="font-size:1.1em;"><span style="font-size:1.3em;">🏷️</span> <strong>Grupo de Cargo:</strong> ${grupoCargo}</p>
+    <p style="font-size:1.1em;"><span style="font-size:1.3em;">💼</span> <strong>Categoria:</strong> ${categoria}</p>
+    <p style="font-size:1.1em;"><span style="font-size:1.3em;">💰</span> <strong>Salário Base Mensal:</strong> R$ ${salario.toFixed(2)}</p>
+    <p style="font-size:1.1em;"><span style="font-size:1.3em;">📅</span> <strong>Número de Meses Trabalhados:</strong> ${meses}</p>
+    <hr style="margin:16px 0;">
+    <div style="background:#eafaf1;border-radius:8px;padding:12px;margin-bottom:12px;">
+      <p style="font-size:1.3em;color:#27ae60;font-weight:bold;">
+        🎉 Valor Bruto Calculado: <span style="font-size:1.4em;">R$ ${resultado.toFixed(2)}</span>
+      </p>
+      <p style="font-size:1em;color:#34495e;">
+        <span style="font-size:1.2em;">ℹ️</span> <strong>O valor bruto</strong> é o total antes dos descontos obrigatórios.<br>
+        <span style="font-size:1.2em;">💸</span> <strong>Descontos possíveis:</strong>
+        <ul style="margin:6px 0 0 18px;">
+          <li>Taxa sindical (conforme acordo coletivo da filial)</li>
+          <li>Imposto de Renda (aplicável para valores acima de R$ 8.214,40)</li>
+        </ul>
+        <span style="font-size:1.2em;">📝</span> Consulte o RH para simulação do valor líquido.
+      </p>
+    </div>
+    <p style="font-size:0.95em;color:#e67e22;">
+      <span style="font-size:1.2em;">⚠️</span> <em>Aviso:</em> Os descontos variam conforme regras da filial e legislação vigente.
+    </p>
+  </div>
+`;
+document.getElementById('relatorio').innerHTML = relatorio;
 }
 
 function limparCampos() {
