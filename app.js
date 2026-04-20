@@ -62,7 +62,7 @@ const relatorio = `
     <hr style="margin:16px 0;">
     <div style="background:#eafaf1;border-radius:8px;padding:12px;margin-bottom:12px;">
       <p style="font-size:1.3em;color:#27ae60;font-weight:bold;">
-        🎉 Valor Bruto Calculado: <span style="font-size:1.4em;">R$ ${resultado.toFixed(2)}</span>
+        🎉 Valor Bruto do PPR Calculado: <span style="font-size:1.4em;">R$ ${resultado.toFixed(2)}</span>
       </p>
       <p style="font-size:1em;color:#34495e;">
         <span style="font-size:1.2em;">ℹ️</span> <strong>O valor bruto</strong> é o total antes dos descontos obrigatórios.<br>
